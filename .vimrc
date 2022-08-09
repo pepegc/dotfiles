@@ -50,26 +50,16 @@ au BufNewFile,BufRead *.js, *.html, *.css:
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+Plug 'VundleVim/Vundle.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'scrooloose/syntastic' " check general syntax
+Plug 'nvie/vim-flake8' " check PEP 8 syntax
+Plug 'jnurmine/Zenburn'
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic' " check general syntax
-Plugin 'nvie/vim-flake8' " check PEP 8 syntax
-Plugin 'jnurmine/Zenburn'
-
-" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 
 colorscheme zenburn 
 
