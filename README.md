@@ -3,5 +3,5 @@
 
 ## .vimrc
 
-Using [vim-plig](https://github.com/junegunn/vim-plug)
+Using [vim-plug](https://github.com/junegunn/vim-plug)
 
