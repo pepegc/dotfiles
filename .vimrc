@@ -16,6 +16,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+noremap <Up>	<Nop>
+noremap <Down>	<Nop>
+noremap <Left>	<Nop>
+noremap <Right>	<Nop>
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -31,20 +36,38 @@ nnoremap <space> za
 
 let g:SimpylFold_docstring_preview=1
 
+autocmd FileType tex,plaintex,markdown,pandoc:
+    \ set textwidth=80 |
+    \ set autoindent |
+    \ set conceallevel=0
+
+au BufNewFile,BufRead *.json:
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
 
 au BufNewFile,BufRead *.py:
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
 au BufNewFile,BufRead *.js, *.html, *.css:
-    \ set tabstop=2
-    \ set softtabstop=2
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
     \ set shiftwidth=2
+
+au BufNewFile,BufRead *.hs:
+    \ set tabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab
 
 "define BadWhitespace before using in a match
 highlight BadWhitespace ctermbg=red guibg=darkred
